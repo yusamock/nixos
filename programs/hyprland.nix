@@ -17,15 +17,15 @@
 		
 		# set variables
 		$terminal = st
-		$browser = firefox
+		$browser = librewolf
     $mainMod = SUPER
 
 		$fileManager = st -e ranger
-		$menu = rofi -show drun
+		$menu = sh ~/.config/rofi/launchers/launcher.sh
 
 		# autostart
 		exec = xrdb merge .Xresources & waybar
-    exec-once = swww init && swww img ~/Downloads/waves_2.png
+   	exec-once = swww init && swww img ~/Downloads/japanese_street_shop.png
 
 		# default env vars
 		env = XCURSOR_SIZE,24
@@ -123,6 +123,7 @@
 		bind = $mainMod, R, exec, $menu
 		bind = $mainMod, P, pseudo, # dwindle
 		bind = $mainMod, J, togglesplit, # dwindle
+		bind = $mainMod, H, fullscreen,
 		bind = $mainMod, G, exec, grim -g "$(slurp -d)" -t png - | wl-copy -t image/png
 
 		# Move focus with mainMod + arrow keys
@@ -177,3 +178,4 @@
 		'';
 	};
 }
+

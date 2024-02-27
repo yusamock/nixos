@@ -1,40 +1,34 @@
 {
-  description = "cool nix flake config :3";
+  description = "bad wrote flake nix config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-     home-manager = {
+    home-manager = {
        url = "github:nix-community/home-manager";
        inputs.nixpkgs.follows = "nixpkgs";
      };
 
-       st.url = "github:siduck/st";
-       hyprland.url = "github:hyprwm/Hyprland";
-       ags.url = "github:Aylur/ags";
-
+        st.url = "github:siduck/st";
+	hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
-      	system = "x86_64-linux";
-      config = {
-      allowUnfree = true;
-      permittedInsecurePackages = [
-	    "electron-25.9.0"
-          ];
-        };
-      };
-
+        system = "x86_64-linux";
+	config = {
+	allowUnfree = true;
+	 };
+	};
     in
     {
     
       nixosConfigurations.blushie = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
-            ./OS/configuration.nix
+            ./config/configuration.nix
             inputs.home-manager.nixosModules.default
           ];
         };
@@ -45,7 +39,6 @@
 	  extraSpecialArgs = { inherit inputs; };
 
 	  modules = [ ./home.nix ];
-      };
-
+	};
     };
 }
