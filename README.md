@@ -1,6 +1,8 @@
 # ❄️ welcome to my nix config file!
 thx for coming here, this means 2 much for me, if u like it, please consider leaving a star, it helps me alot!
 
+![nix](https://github.com/yusamock/nixos/assets/141967852/379bcc64-24f7-4768-8bee-42124e0a4316)
+
 
 ## usage
 since all of this files are reproduciable, you dont need to symlink (i just recommend to have flakes and home-manager pre-enabled, since i tried to test it and broke my install, lmafo)
