@@ -18,4 +18,4 @@ since all of this files are reproduciable, you dont need to symlink (i just reco
 
 
 ## credits !
-thx alot for [tiffany](https://github.com/jiyutake/dotfiles) for the config format !
+thx alot [tiffany](https://github.com/jiyutake/dotfiles) for the config format !
