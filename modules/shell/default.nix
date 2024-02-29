@@ -1,0 +1,10 @@
+{ ... }:
+
+{
+
+  imports = [
+    ./bash
+    ./starship 
+    ./variables
+  ];
+}

@@ -10,7 +10,7 @@
      };
 
         st.url = "github:siduck/st";
-	hyprland.url = "github:hyprwm/Hyprland";
+	      hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -20,6 +20,11 @@
         system = "x86_64-linux";
 	config = {
 	allowUnfree = true;
+  permittedInsecurePackages = [
+    "steam"
+    "steam-original"
+    "steam-run"
+     ];
 	 };
 	};
     in
@@ -28,7 +33,7 @@
       nixosConfigurations.blushie = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
-            ./config/configuration.nix
+            ./hosts/yusa/configuration.nix
             inputs.home-manager.nixosModules.default
           ];
         };
